@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             listaDocumentos = new ArrayList<Documentos>();
-                            JSONArray jsonArray = response.getJSONArray("listadocumentos");
+                            JSONArray jsonArray = response.getJSONArray("listaDocumentos");
 
                             int tamanio = jsonArray.length();
                             if (tamanio > 0) {
