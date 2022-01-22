@@ -33,7 +33,7 @@ public class DocumentoAdapter  extends RecyclerView.Adapter<DocumentoAdapter.Vie
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = lInflater.inflate(R.layout.layout_item, null);
+        View view = lInflater.inflate(R.layout.documentos, null);
         RecyclerView.ViewHolder holder = new DocumentoAdapter.ViewHolder(view);
         return (ViewHolder) holder;
     }
@@ -45,7 +45,7 @@ public class DocumentoAdapter  extends RecyclerView.Adapter<DocumentoAdapter.Vie
         holder.bindData(listaDocumentos.get(position));
     }
 
-    public List<Documentos> getListaEvaluador() {
+    public List<Documentos> listaDocumentos() {
         return listaDocumentos;
     }
 
@@ -55,25 +55,23 @@ public class DocumentoAdapter  extends RecyclerView.Adapter<DocumentoAdapter.Vie
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView lblIDEvaluador, lblNombres, lblArea;
+        TextView lblID, lblTitulo, lblDocumento;
         Button btn;
         ViewHolder(View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.picImg);
-            lblIDEvaluador = itemView.findViewById(R.id.lblIdEvaluador);
-            lblNombres = itemView.findViewById(R.id.lblNombreEvaluador);
-            lblArea = itemView.findViewById(R.id.lblArea);
-            btn=itemView.findViewById(R.id.btn);
+            lblID = itemView.findViewById(R.id.id);
+            lblTitulo = itemView.findViewById(R.id.titulo);
+            lblDocumento = itemView.findViewById(R.id.documento);
         }
 
 
 
         private void bindData(final Documentos documento) {
             //Glide.with(context).load(documento.getImgJpg()).error("https://evaladmin.uteq.edu.ec/adminimg/unknown.png").into(imageView);
-            lblIDEvaluador.setText(evaluador.getIdEvaluador());
-            lblNombres.setText(evaluador.getNombres());
-            lblArea.setText(evaluador.getArea());
-            itemView.setOnClickListener(new View.OnClickListener() {
+            lblID.setText(documento.getId());
+            lblTitulo.setText(documento.getTitulo());
+            lblDocumento.setText(documento.getDocumento());
+            /*itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     Intent intent=new Intent(context, EvaluadosActivity.class);
                     Bundle bundle =new Bundle();
@@ -90,7 +88,7 @@ public class DocumentoAdapter  extends RecyclerView.Adapter<DocumentoAdapter.Vie
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }
-            });
+            });*/
         }
 
 

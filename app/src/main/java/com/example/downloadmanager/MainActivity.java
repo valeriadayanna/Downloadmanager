@@ -50,10 +50,13 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setAdapter() {
         DocumentoAdapter adapter = new DocumentoAdapter(listaDocumentos, this);
-        RecyclerView recyclerView = findViewById(R.id.recyclerEvaluador);
+        RecyclerView recyclerView = findViewById(R.id.recyclerDocumentos);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+    }
+    public void eventoVolley(View v) {
+        buscarVolley("https://my-json-server.typicode.com/valeriadayanna/Downloadmanager");
     }
     public void getPermission(ArrayList<String> permisosSolicitados){
 
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public void BajarDoc(View view){
 
 
-        String url = "https://www.uteq.edu.ec/revistacyt/archivositio/instrucciones_arbitros.pdf";
+        String url = "https://my-json-server.typicode.com/valeriadayanna/Downloadmanager";
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         request.setDescription("PDF");
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
