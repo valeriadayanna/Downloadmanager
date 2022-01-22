@@ -1,9 +1,7 @@
 {
-  "documentos": [
-    {
+  
   "id": 1,
-  "titulo": "Documento PDF"
-  "documento":"https://campusinteligencialimite.org/fichas/VENTILACI%C3%93N_DE_ESPACIOS";
-    }
-  ]
+  "titulo": "Documento PDF",
+"documento":"https://campusinteligencialimite.org/fichas/VENTILACI%C3%93N_DE_ESPACIOS"
+    
 }
